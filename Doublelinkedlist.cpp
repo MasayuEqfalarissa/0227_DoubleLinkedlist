@@ -157,5 +157,109 @@ bool listempty()
     return (start == NULL);
 }
 
+void traverse()
+{
+    if (listempty())
+    {
+        cout << "\nList is empty\n";
+    }
+    else
+    {
+        cout << "\n\nRecord in ascending order of roll number are:\n";
+        node *currentnode = start;
+        while (currentnode != NULL)
+        {
+            cout << currentnode->nomhs << endl;
+            currentnode = currentnode->next;
+        }
+        cout << endl;
+    }
+}
 
+void revtraverse()
+{
+    if (listempty())
+        cout << "\nlist is empty" << endl;
+    else
+    {
+        cout << "\nrecord in ascending order of roll number are: " << endl;
+        node *currentnode = start;
+        while (currentnode->next != NULL)
+            currentnode = currentnode->next;
 
+        while (currentnode != NULL)
+        {
+            cout << currentnode->nomhs << " " << currentnode->name << endl;
+            currentnode = currentnode->prev;
+        }
+    }
+}
+
+void searchData()
+{
+    if (listempty() == true)
+    {
+        cout << "\nList is empty" << endl;
+    }
+    node *prev, *curr;
+    prev = curr = NULL;
+    cout << "\nEnter the roll number of the student whose record you want to serach: ";
+    int num;
+    cin >> num;
+    if (search(num, &prev, &curr) == false)
+        cout << "\nRecord not found " << endl;
+    else
+    {
+        cout << "\nRecord found" << endl;
+        cout << "\nRoll number: " << curr->nomhs << endl;
+        cout << "\nNme " << curr->name << endl;
+    }
+}
+
+int main()
+{
+    while (true)
+    {
+        try
+        {
+            cout << "\nMenu" << endl;
+            cout << "1. Add a record to the list" << endl; 
+            cout << "2. Delete a record from the list" << endl;
+            cout << "3. View all records in the ascending order of roll numbers" << endl;
+            cout << "4. View all records in the descending order of roll nunners" << endl; 
+            cout << "5. Search for a record in the list" << endl;
+            cout << "6. Exit" << endl;
+            cout << "\nEnter your colce (1-6): "; 
+        char ch;
+        cin >> ch;
+
+        switch (ch)
+            {
+            case '1':
+                addnode();
+                break;
+            case '2':
+                deletenode();
+                break;
+            case '3':
+                traverse();
+                break;
+            case '4':
+                revtraverse();
+                break;
+            case '5':
+                searchData();
+                break;
+            case '6':
+                return 0;
+            default:
+                cout << "\nInvalid option" << endl;
+                break;
+            }
+        }
+        catch (exception &e)
+        {
+            cout << "check for the values entered." << endl;
+        }
+    }
+}
