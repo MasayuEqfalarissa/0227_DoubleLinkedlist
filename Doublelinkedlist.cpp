@@ -115,4 +115,41 @@ void deletenode()
 
     current = start;
     previous = NULL;
+
+    //locate the node to be deleted
+    while (current != NULL && current -> nomhs != rollno)
+    {
+        previous = current;
+       current = current-> next;
+    }
+
+    if (current == NULL)
+    {
+        cout << "\033[31nthe record with roll number " << rollno << "not found\033[om" << endl;
+        return;
+    }
+
+    // node to be deleted in the first node 
+    if (current = start)
+    {
+        start = start -> next;
+        if (start != NULL)
+        {
+            start -> prev = NULL;
+        }
+    }
+    else 
+    {
+        previous -> next = current -> next;
+        if (current -> next != NULL)
+        {
+            current -> next -> prev = previous ;
+        }
+    }
+    //release the memory of the node marked as current
+    delete current;
+    cout << "\x1b[32mrecord with roll number " << rollno << "deleted\x1b[0m" <<endl;
 }
+
+
+
