@@ -95,4 +95,5 @@ bool search(int rollno, node **previous, node **current)
         *previous = *current;
         *current = (*current)->next;
     }
+    return (*current != NULL);
 }
