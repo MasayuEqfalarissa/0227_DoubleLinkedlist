@@ -24,4 +24,11 @@ void addnode()
     cin >> newnode->nomhs; //assign value to the data field of the new node
     cout << "\nenter the name of the student: ";
     cin >> newnode ->name; //assign value to the data field of th
-}
+
+    //insert the new mode in the list
+    //kondisi jika start == NULL atau nomhs node baru <= nomhs start
+    if (start == NULL || newnode->nomhs <= start ->nomhs)
+    {
+        
+    }
+};
