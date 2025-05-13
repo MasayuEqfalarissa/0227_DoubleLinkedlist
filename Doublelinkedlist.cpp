@@ -97,3 +97,22 @@ bool search(int rollno, node **previous, node **current)
     }
     return (*current != NULL);
 }
+
+//pembuatan prosedur delete untuk menghapus data 
+void deletenode()
+{
+    node *previous, *current;
+    int rollno;
+
+    cout << "\nenter the roll number of the student whose record is to be delete: ";
+    cin >> rollno;
+
+    if (start == NULL)
+    {
+        cout << "list is empty" << endl;
+        return;
+    }
+
+    current = start;
+    previous = NULL;
+}
