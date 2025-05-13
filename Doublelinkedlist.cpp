@@ -151,5 +151,11 @@ void deletenode()
     cout << "\x1b[32mrecord with roll number " << rollno << "deleted\x1b[0m" <<endl;
 }
 
+//methad untuk mengecek apakah list kosong 
+bool listempty()
+{
+    return (start == NULL);
+}
+
 
 
