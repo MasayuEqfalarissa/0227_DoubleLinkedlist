@@ -77,5 +77,10 @@ void addnode()
         {
             previous ->next = newnode;
         }
+        //kondisi jika if previous sama dengan null
+        else
+        {
+            start = newnode;
+        }
     }
 };
