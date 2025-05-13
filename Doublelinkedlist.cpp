@@ -54,5 +54,12 @@ void addnode()
         //set nilai current = start dan nilai previous = null
         node *current = start; //step 1.a: start from the first node
         node *previous = NULL; //step 1.b: previous node is null initlally
+
+        //looping selama current != null dan nomhs dari current lebih kecil dari
+        while (current != NULL && current -> nomhs < newnode->nomhs)
+        {
+            previous = current;
+            current = current -> next;
+        }
     }
 };
