@@ -18,5 +18,6 @@ node *start = NULL;
 //deklarasi prosedur addnode
 void addnode()
 {
-    
+    //pembuatan node dan pemberian value untuk data nomhs dan name 
+    node *newnode = new node(); //step 1 buat node baru 
 }
