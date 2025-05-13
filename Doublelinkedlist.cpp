@@ -84,3 +84,15 @@ void addnode()
         }
     }
 };
+
+//pembuatan function search untuk mencari data
+bool search(int rollno, node **previous, node **current)
+{
+    *previous = NULL;
+    *current = start;
+    while (*current != NULL && (*current)->nomhs != rollno)
+    {
+        *previous = *current;
+        *current = (*current)->next;
+    }
+}
