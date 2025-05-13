@@ -29,6 +29,11 @@ void addnode()
     //kondisi jika start == NULL atau nomhs node baru <= nomhs start
     if (start == NULL || newnode->nomhs <= start ->nomhs)
     {
-        
+        //step 2: insert the new mode at new beginning
+        //kondisi jika start tidak kosong dan nomhs node baru sama dengan nomhs
+        if (start != NULL && newnode -> nomhs == start -> nomhs)
+        {
+            cout << "\033[31mduplicate roll numbers not allowed\033[0m" << endl;
+        }
     }
 };
